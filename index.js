@@ -242,26 +242,25 @@ Using the annoyingSong function below do the following:
   2. At each iteration, it should return this string: 
       "(number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall"
 */
-let bottles;
+
 function annoyingSong(){
-  for (let soda = 99; soda >= 1; soda - 1){
-if (soda == 1){
-  bottles= "bottle";
-} else{
-  bottles = "bottles";
+  let bottles;
+  let bottlesLeft;
+  for (i = 99; i >= 1; i--) {
+    if (i == 1) {
+      bottles = "bottle";
+      bottlesLeft = "No bottles of soda on the wall!";
+    } else {
+      bottles = "bottles";
+      bottlesLeft = i - 1 + " bottles of soda on the wall!";
+    } console.log(i+ " " + bottles + " of soda on the wall,");
+    console.log(i+ " " + bottles + " of soda,");
+    console.log("Take one down, pass it around,");
+    console.log(bottlesLeft);
+    } 
+    
 }
-console.log(soda+" "+bottles+" of soda on the wall. ");
-if (soda < 99) {
-  console.log(""); 
-  console.log(soda+" "+bottles+" of soda on the wall.");
-}
-console.log(soda+" "+bottles+" of soda.");
-    console.log("Take one down.");
-    console.log("Pass it around.");
-    if (soda == 1) {
-        console.log("No bottles of soda on the wall.");
-  }
-}
+console.log(annoyingSong());
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -294,6 +293,7 @@ if (score >= 90 && score <= 100){
           }
         }
       }
+
     grade(Math.floor(Math.random() * 101));
 
   
