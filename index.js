@@ -34,13 +34,13 @@ Do the following:
 
    HINT: no function required
 */
-// let a = 12
-// let b = 25
+ let a = 12
+let b = 25
 
-// if (b > a ){
-//  return a = b; 
-// }
-
+if (b > a ){
+  a = b; 
+ }
+console.log(a);
 
 
 
@@ -173,9 +173,9 @@ Use the game function below to do the following:
   
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
-const rock = 0;
-const paper = 1;
-const scissors = 2; 
+const rock = 'rock';
+const paper = 'paper';
+const scissors = 'scissors'; 
 
 function game(user, computer){
 if (user === computer){
@@ -189,14 +189,14 @@ if (user === computer){
       } else if ( user === scissors && computer === rock){
           return "you lose!" ;
         } else if (user === paper && computer === scissors){
-            return "you lose" ;
-          } else{
+            return "you lose!" ;
+          } else {
             if (user === paper && computer === rock){
               return "you win!" ;
             }
           }
         }
-        (game(rock, Math.floor(Math.random() * 2)));
+        // (game(rock, Math.floor(Math.random() * 2)));
   
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -243,20 +243,11 @@ Using the annoyingSong function below do the following:
       "(number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall"
 */
 
-function annoyingSong(){
+function annoyingSong(number){
   let bottles;
   let bottlesLeft;
-  for (i = 99; i >= 1; i--) {
-    if (i == 1) {
-      bottles = "bottle";
-      bottlesLeft = "No bottles of soda on the wall!";
-    } else {
-      bottles = "bottles";
-      bottlesLeft = i - 1 + " bottles of soda on the wall!";
-    } console.log(i+ " " + bottles + " of soda on the wall,");
-    console.log(i+ " " + bottles + " of soda,");
-    console.log("Take one down, pass it around,");
-    console.log(bottlesLeft);
+  for ( let i = number; i >= 1; i--) {
+    return       `${number} bottles of soda on the wall, ${number} bottles of soda, take one down pass it around ${number - 1} bottles of soda on the wall`
     } 
     
 }
