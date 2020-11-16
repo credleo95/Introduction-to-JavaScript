@@ -38,8 +38,9 @@ Do the following:
 // let b = 25
 
 // if (b > a ){
-//    return 
+//  return a = b; 
 // }
+
 
 
 
@@ -172,11 +173,30 @@ Use the game function below to do the following:
   
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
+const rock = 0;
+const paper = 1;
+const scissors = 2; 
 
 function game(user, computer){
-    /*add your code here*/
-}
-  
+if (user === computer){
+  return "it's a tie"; 
+} else if ( user === rock && computer === paper){
+    return "you lose!" ;
+  }else if ( user === rock && computer === scissors){
+      return "you win!" ;
+    } else if ( user === scissors && computer === paper){
+        return "you win!";
+      } else if ( user === scissors && computer === rock){
+          return "you lose!" ;
+        } else if (user === paper && computer === scissors){
+            return "you lose" ;
+          } else{
+            if (user === paper && computer === rock){
+              return "you win!" ;
+            }
+          }
+        }
+        (game(rock, Math.floor(Math.random() * 2)));
   
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -222,11 +242,26 @@ Using the annoyingSong function below do the following:
   2. At each iteration, it should return this string: 
       "(number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall"
 */
-
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+let bottles;
+function annoyingSong(){
+  for (let soda = 99; soda >= 1; soda - 1){
+if (soda == 1){
+  bottles= "bottle";
+} else{
+  bottles = "bottles";
+}
+console.log(soda+" "+bottles+" of soda on the wall. ");
+if (soda < 99) {
+  console.log(""); 
+  console.log(soda+" "+bottles+" of soda on the wall.");
+}
+console.log(soda+" "+bottles+" of soda.");
+    console.log("Take one down.");
+    console.log("Pass it around.");
+    if (soda == 1) {
+        console.log("No bottles of soda on the wall.");
   }
-
+}
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -247,14 +282,11 @@ Using the grade function below do the following:
 function grade(score){
 if (score >= 90 && score <= 100){
   return 'you got an A'
-  }else { 
-    if(score >= 80 && score <= 89){
+  }else if(score >= 80 && score <= 89){
       return 'you got a B'
-    }else{
-      if(score >= 70 && score <= 79){
+    }else if(score >= 70 && score <= 79){
         return 'you got a C'
-      } else{
-        if (score >= 60 && score <= 69){
+      } else if (score >= 60 && score <= 69){
           return 'you got a D'
         }else{
           if (score <= 69 ){
@@ -262,10 +294,7 @@ if (score >= 90 && score <= 100){
           }
         }
       }
-    }
-      }
-    }
-    grade(Math.floor(Math.random() * 101))
+    grade(Math.floor(Math.random() * 101));
 
   
   
